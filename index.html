@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta CHARSET="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>My Phone Google Pixel 2</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer></script>
+	<head>
+	<body>
+		<div class="main">
+			<nav>
+				<div class="logo">
+					<img src="images/google_logo.png">
+				</div>
+				<div class="nav-links">
+					<ul class="tabs">
+						<li><a data-tab-traget="#home" class="active tab">Home</a></li>
+						<li><a data-tab-traget="#phone" class="tab">Phone</a></li>
+						<li><a data-tab-traget="#about" class="tab">About</a></li>
+						<li><a data-tab-traget="#contact" class="tab">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+			
+			<div class="tab-content">
+				<div id="home" data-tab-content class="active">
+					<h1>Home</h1>
+					<p>Welcome! This is my phone. It is the best phone with the best camera up to date. It ain't cheap but it does get the job done when <br />
+					it comes to being a phone in your pocket.</p>
+				</div>
+				<div id="phone" data-tab-content>
+					<h1>Phone</h1>
+					<p>This phone costs around $400 US dollars. It came out back in 2017 and it still holds up even against the newer phones of today. <br />
+					Google's latest phone is the Pixel 4a. Which of course has the better camera and specs than the Pixel 2 but it will cost you over <br />
+					$900 US dollars.</p>
+				</div>
+				<div id="about" data-tab-content>
+					<h1>About</h1>
+					<p>I am just a student working on his project for class. Hope this website looks okay!</p>
+				</div>
+				<div id="contact" data-tab-content>
+					<h1>Contact</h1>
+					<p>This is how you can contact me: <br />
+					Email: <a href="mailto:greenbeetleproductions@gmail.com">greenbeetleproductions@gmail.com</a> <br />
+					Phone:	<a href="tel:+16198022271">619.802.2271</a></p>
+				</div>
+			</div>
+			
+			<div class="information">
+				<div class="overlay"></div>
+				<img src="images/phone.png" class="mobile">
+				<div id="circle">
+					<div class="feature one">
+						<img src="images/camera.png">
+						<div>
+							<h1>Camera</h1>
+							<p>12MP, Wide Angle Lens</p>
+						</div>
+					</div>
+					<div class="feature two">
+						<img src="images/processor.png">
+						<div>
+							<h1>Processor</h1>
+							<p>Snapdragon Octa-core 11nm</p>
+						</div>
+					</div>
+					<div class="feature three">
+						<img src="images/display.png">
+						<div>
+							<h1>Dsiplay</h1>
+							<p>6.5" Mini-Drop Fullscreen</p>
+						</div>
+					</div>
+					<div class="feature four">
+						<img src="images/battery.png">
+						<div>
+							<h1>Battery Life</h1>
+							<p>5000mAh, 720Hrs Standby</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="controls">
+				<img src="images/arrow.png" id="upBtn">
+				<h3>Features</h3>
+				<img src="images/arrow.png" id="downBtn">
+			</div>
+			
+		</div>
+		
+		<script>
+			var circle = document.getElementById("circle");
+			var upBtn = document.getElementById("upBtn");
+			var downBtn = document.getElementById("downBtn");
+			
+			var rotateValue = circle.style.transform;
+			var rotateSum;
+			
+			upBtn.onclick = function()
+			{
+				rotateSum = rotateValue + "rotate(-90deg)";
+				circle.style.transform = rotateSum;
+				rotateValue = rotateSum;
+			}
+			downBtn.onclick = function()
+			{
+				rotateSum = rotateValue + "rotate(90deg)";
+				circle.style.transform = rotateSum;
+				rotateValue = rotateSum;
+			}
+			
+		</script>
+		
+		<script>
+		const tabs = document.querySelectorAll('[data-tab-target]')
+		const tabContents = document.querySelectorAll('[data-tab-content]')
+
+			tabs.forEach(tab =>{
+				tab.addEventListener('click',() => {
+		
+				const target = document.querySelector(tab.dataset.tabTarget)
+		
+				tabContents.forEach(tabContent => tabContent.classList.remove ('active'))
+		
+				tabs.forEach(tab => tab.classList.remove ('active'))
+		
+				tab.classList.add('active')
+		
+				target.classList.add('active')
+			}
+	
+		}
+		</script>
+		
+	</body>
+
+</html>
